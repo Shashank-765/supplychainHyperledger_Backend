@@ -19,7 +19,7 @@ async function getContract() {
     discovery: { enabled: true, asLocalhost: true }
   });
 
-  const network = await gateway.getNetwork('foodchain3');
+  const network = await gateway.getNetwork('foodchain6');
   const contract = network.getContract('basic');
 
   return { gateway, contract };

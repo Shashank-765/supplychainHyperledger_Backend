@@ -5,10 +5,12 @@ const { getContract } = require('../utils/contractHelper');
 exports.createUser = async (req, res) => {
     try {
       const user = req.body;
-  
+ 
+
+
       const requiredFields = [
-        'userId', 'userType', 'userName', 'userEmail', 'userPhone',
-        'userAddress', 'userStatus', 'userCreatedAt', 'userUpdatedAt',
+        'userId', 'userType','userRole', 'userName', 'userEmail', 'userPhone',
+        'userAddress','userPassword' , 'userStatus', 'userCreatedAt', 'userUpdatedAt',
         'userDeletedAt', 'userCreatedBy', 'userUpdatedBy', 'userDeletedBy'
       ];
   
@@ -56,9 +58,11 @@ exports.createUser = async (req, res) => {
         userId: req.params.id,
         userType: req.body.userType,
         userName: req.body.userName,
+        userRole: req.body.userRole,
         userEmail: req.body.userEmail,
         userPhone: req.body.userPhone,
         userAddress: req.body.userAddress,
+        userPassword: req.body.userPassword,
         userStatus: req.body.userStatus,
         userCreatedAt: req.body.userCreatedAt,
         userUpdatedAt: req.body.userUpdatedAt,

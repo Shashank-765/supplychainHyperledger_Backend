@@ -109,6 +109,11 @@ exports.updateBatch = async (req, res) => {
     const { id } = req.params;
     const batch = req.body;
 
+
+
+
+   
+
     const { gateway, contract } = await getContract();
     const result = await contract.submitTransaction('UpdateBatch', id, JSON.stringify(batch));
 
