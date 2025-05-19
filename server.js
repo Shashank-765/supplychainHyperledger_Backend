@@ -25,6 +25,8 @@ app.use('/api', require('./routes/importerRoutes'));
 app.use('/api', require('./routes/processorRoutes'));
 app.use('/api', require('./routes/userRoutes'));
 app.use('/api', require('./routes/farmInspectorRouter'));
+app.use('/api', require('./routes/buyRouter'));
+
 // rouing for test api url working
 app.get('/', (req, res) => {
   res.json({ message: 'Test API is working!' });

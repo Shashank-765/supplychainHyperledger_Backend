@@ -19,7 +19,6 @@ exports.createFarmInspector = async (req, res) => {
     if (!Array.isArray(inspector.image)) {
       inspector.image = ['nil']; // default to empty array if not provided
     }
-    console.log('inspector', inspector);
     const { gateway, contract } = await getContract();
     const result = await contract.submitTransaction('CreateFarmInspector', JSON.stringify(inspector));
     await gateway.disconnect();
@@ -37,9 +36,7 @@ exports.viewFarmInspector = async (req, res) => {
     const { id } = req.params;
 
     const { gateway, contract } = await getContract();
-    console.log('id', id)
     const result = await contract.evaluateTransaction('ViewFarmInspector', id);
-    console.log('result', result)
     await gateway.disconnect();
 
     res.status(200).json(JSON.parse(result.toString()));

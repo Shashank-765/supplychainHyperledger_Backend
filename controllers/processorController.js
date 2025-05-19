@@ -3,7 +3,6 @@ const { getContract } = require('../utils/contractHelper');
 exports.createProcessor = async (req, res) => {
   try {
     const processor = req.body;
-console.log('req.body', req.body)
     const requiredFields = [
       'processorId','processorName', 'price', 'quantity', 'processingMethod', 'packaging',
       'packagedDate', 'warehouse', 'warehouseLocation', 'destination',
@@ -39,7 +38,7 @@ exports.viewProcessor = async (req, res) => {
     const { gateway, contract } = await getContract();
     const result = await contract.evaluateTransaction('ViewProcessor', id);
     await gateway.disconnect();
-// console.log('result', result)
+
     res.status(200).json(JSON.parse(result.toString()));
   } catch (err) {
     console.error(err);
@@ -70,6 +69,7 @@ exports.updateProcessor = async (req, res) => {
       batchId: req.body.batchId
     };
 
+   
     await contract.submitTransaction("UpdateProcessor", JSON.stringify(processor));
     res.status(200).json({ message: "Processor updated successfully" });
   } catch (error) {
