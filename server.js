@@ -9,7 +9,7 @@ const morgan = require('morgan');
 
 
 const app = express();
-const PORT = 6000;
+const PORT = 7000;
 app.use(helmet()); 
 app.use(morgan('dev')); 
 app.use(cors({
