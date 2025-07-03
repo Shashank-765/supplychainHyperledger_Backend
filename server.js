@@ -18,14 +18,14 @@ app.use(cors({
   }));
 app.use(bodyParser.json());
 
-app.use('/api1/api', require('./routes/batchRoutes'));
-app.use('/api1/api', require('./routes/exporterRoutes'));
-app.use('/api1/api', require('./routes/harvesterRouter'));
-app.use('/api1/api', require('./routes/importerRoutes'));
-app.use('/api1/api', require('./routes/processorRoutes'));
-app.use('/api1/api', require('./routes/userRoutes'));
-app.use('/api1/api', require('./routes/farmInspectorRouter'));
-app.use('/api1/api', require('./routes/buyRouter'));
+app.use('/api1', require('./routes/batchRoutes'));
+app.use('/api1', require('./routes/exporterRoutes'));
+app.use('/api1', require('./routes/harvesterRouter'));
+app.use('/api1', require('./routes/importerRoutes'));
+app.use('/api1', require('./routes/processorRoutes'));
+app.use('/api1', require('./routes/userRoutes'));
+app.use('/api1', require('./routes/farmInspectorRouter'));
+app.use('/api1', require('./routes/buyRouter'));
 
 // rouing for test api url working
 app.get('/api1', (req, res) => {
